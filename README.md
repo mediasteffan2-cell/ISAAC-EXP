@@ -8,8 +8,26 @@ ROS2 note: `src/isaac_go2_ros2.py` first tries a normal `import rclpy`. If that 
 
 Prereqs:
 - Isaac Sim 5.1 + Isaac Lab 2.3+ (pip or binaries)
-- A Python env matching your Isaac Sim install (pip uses Python 3.11)
-- Optional: system ROS2 Humble install if you want to run tools like `rviz2` on the same machine
+- A single conda environment for Isaac Sim/Isaac Lab (we use `env_isaaclab_py311`)
+- A separate ROS2 Humble env for Nav2/SLAM (created automatically by `./scripts/after_clone.sh`)
+
+### Environment quickstart
+1. Install Isaac Sim/Isaac Lab into `env_isaaclab_py311` (or export `GO2_ISAAC_ENV=<your_env>` before running our scripts).
+   ```bash
+   # Example if you want to mirror the default name
+   conda create -n env_isaaclab_py311 python=3.11
+   conda activate env_isaaclab_py311
+   pip install --extra-index-url https://pypi.nvidia.com isaaclab isaac-sim==5.1.*
+   ```
+   (Follow NVIDIA’s official instructions for the full Isaac Lab install.)
+
+2. Create the ROS2 Humble environment (Nav2, slam_toolbox, etc.). The helper script auto-detects conda and installs the needed robostack packages:
+   ```bash
+   ./scripts/after_clone.sh
+   # or override the name:
+   GO2_ROS_ENV=my_ros ./scripts/after_clone.sh
+   ```
+   Afterwards, `./scripts/run_go2.sh` (simulation) and `./scripts/run_nav2_slam.sh` (Nav2) know which envs to activate. If you changed the names, export `GO2_ISAAC_ENV` / `GO2_ROS_ENV_PATH` (for scripts/ros2_env.sh) accordingly.
 
 1. Create/activate a Python env for Isaac Lab (conda or venv).
 2. Install Isaac Sim 5.1 and Isaac Lab following the official docs.
