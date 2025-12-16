@@ -17,15 +17,14 @@ Prereqs:
    - `isaaclab_tasks` (registers the Go2 Gym envs)
    - `isaaclab_assets` (robot asset configs)
    - `isaaclab_rl` (RSL‑RL wrapper)
-3. Launch the simulation:
+3. Launch the simulation (script handles conda activation + ROS bridge setup):
 ```bash
-cd src
-GO2_HEADLESS=0 python isaac_go2_ros2.py   # GUI + keyboard teleop
-# GO2_HEADLESS=1 python isaac_go2_ros2.py # headless/livestream (default)
+./scripts/run_go2.sh                   # GUI + keyboard teleop
+GO2_HEADLESS=1 ./scripts/run_go2.sh    # headless/livestream (default)
 
 # Environment selection: set GO2_ENV_NAME or pass a Hydra override, e.g.
-#   GO2_ENV_NAME=warehouse python isaac_go2_ros2.py
-#   python isaac_go2_ros2.py env_name=warehouse-forklifts
+#   GO2_HEADLESS=0 ./scripts/run_go2.sh env_name=warehouse
+#   ./scripts/run_go2.sh env_name=warehouse-forklifts
 # Defaults to the obstacle-dense terrain so Nav2 sees obstacles immediately.
 ```
 
@@ -68,20 +67,17 @@ Run:
 
 Terminal 1 (Isaac Sim / Isaac Lab env):
 ```bash
-source /path/to/env_isaaclab/bin/activate
-GO2_HEADLESS=1 python src/isaac_go2_ros2.py   # or GO2_HEADLESS=0 for GUI
+./scripts/run_go2.sh
 # Optional (useful for CI): limit runtime by steps
-# GO2_MAX_STEPS=2000 GO2_HEADLESS=1 python src/isaac_go2_ros2.py
+# GO2_MAX_STEPS=2000 GO2_HEADLESS=1 ./scripts/run_go2.sh
 
 # Hydra overrides are supported, e.g.:
-# GO2_HEADLESS=0 python src/isaac_go2_ros2.py env_name=office sensor.enable_camera=false
+# GO2_HEADLESS=0 ./scripts/run_go2.sh env_name=office sensor.enable_camera=false
 ```
 
 Terminal 2 (ROS2 Humble env):
 ```bash
-source /opt/conda/etc/profile.d/conda.sh
-conda activate ros2_humble
-./scripts/run_nav2_slam.sh   # from repo root (auto-opens RViz if DISPLAY is set)
+./scripts/run_nav2_slam.sh   # auto-activates ros2_humble if needed, then runs pointcloud->scan + Nav2
 ```
 Notes:
 - `scripts/run_nav2_slam.sh` defaults to FastDDS (`RMW_IMPLEMENTATION=rmw_fastrtps_cpp`) and `ROS_DOMAIN_ID=0` to match Isaac Sim's ROS2 bridge.
