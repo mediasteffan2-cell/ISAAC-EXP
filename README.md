@@ -147,4 +147,18 @@ rviz2 -d src/rviz/go2.rviz
 
 Notes:
 - To save a map: `ros2 service call /slam_toolbox/save_map slam_toolbox/srv/SaveMap "{name: my_map}"`.
-- For localization‑only later (AMCL), switch `slam:=False` and provide a real map; we can add a helper script for that.
+- For localization-only later (AMCL), switch `slam:=False` and provide a real map; we can add a helper script for that.
+
+## Troubleshooting
+
+- **Reference logs:** `debug/go2_run.log` (Isaac Sim bring-up) and `debug/nav2_run.log` (Nav2/SLAM bring-up) contain captured runs from this repo. Diff your output against them—e.g., if Nav2 keeps printing `Invalid frame ID "odom"` then the sim/bridge isn’t publishing `/tf` yet.
+- **Keep the sim running:** Always start `./scripts/run_go2.sh` first and ensure it stays alive before launching `./scripts/run_nav2_slam.sh`. Nav2 will never activate if the sim is stopped or if `/tf` isn’t flowing.
+- **Topic sanity checks:** In the ROS2 terminal run `python3 scripts/pointcloud_stats.py` and `python3 scripts/scan_stats.py`. Both should report non-zero counts; otherwise the bridge isn’t producing data (check `logs/debug_go2.log`).
+- **Reproduce logs for debugging:** You can capture the exact commands we used via
+  ```bash
+  GO2_HEADLESS=1 GO2_MAX_STEPS=400 ./scripts/run_go2.sh > logs/debug_go2.log 2>&1 &
+  GO2_NO_RVIZ=1 ./scripts/run_nav2_slam.sh > logs/debug_nav2.log 2>&1
+  ```
+  then copy the tails into `debug/go2_run.log` / `debug/nav2_run.log` before filing an issue.
+- **RViz on ThinLinc:** set `GO2_RVIZ_SOFTWARE=1 ./scripts/run_nav2_slam.sh` to avoid GPU/GL crashes.
+- **Env confusion:** Run `./scripts/after_clone.sh` once. Afterwards `./scripts/run_go2.sh` and `./scripts/run_nav2_slam.sh` activate their respective conda envs automatically. If you rename the envs, export `GO2_ISAAC_ENV` / `GO2_ROS_ENV_PATH` accordingly.
