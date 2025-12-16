@@ -18,9 +18,12 @@ if [[ ! -f /opt/conda/etc/profile.d/conda.sh ]]; then
   exit 1
 fi
 
+# Conda activation scripts reference variables that may be unset under `set -u`.
+set +u
 # shellcheck disable=SC1091
 source /opt/conda/etc/profile.d/conda.sh
 conda activate "$ISAAC_ENV"
+set -u
 
 # Helper: locate Isaac Sim's ROS2 bridge library so the internal ROS nodes load.
 resolve_ros_bridge() {
