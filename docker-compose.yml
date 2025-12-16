@@ -1,0 +1,40 @@
+version: "3.9"
+
+services:
+  isaacsim-go2:
+    image: isaacsim_go2_5.1.0:latest
+    container_name: isaacsim_go2
+    entrypoint: /bin/bash -l
+    network_mode: host
+    runtime: nvidia
+    gpus: all
+    stdin_open: true
+    tty: true
+    working_dir: /workspace/repo-go2
+    environment:
+      PRIVACY_CONSENT: "Y"
+      ACCEPT_EULA: "Y"
+      DISPLAY: ${DISPLAY}
+      XAUTHORITY: /root/.Xauthority
+      ROS_DOMAIN_ID: ${ROS_DOMAIN_ID:-0}
+    volumes:
+      - ./:/workspace/repo-go2:rw
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${HOME}/.Xauthority:/root/.Xauthority:rw
+      - ${HOME}/docker/isaac-sim/cache/kit:/isaac-sim/kit/cache:rw
+      - ${HOME}/docker/isaac-sim/cache/ov:/root/.cache/ov:rw
+      - ${HOME}/docker/isaac-sim/cache/pip:/root/.cache/pip:rw
+      - ${HOME}/docker/isaac-sim/cache/glcache:/root/.cache/nvidia/GLCache:rw
+      - ${HOME}/docker/isaac-sim/cache/computecache:/root/.nv/ComputeCache:rw
+      - ${HOME}/docker/isaac-sim/logs:/root/.nvidia-omniverse/logs:rw
+      - ${HOME}/docker/isaac-sim/data:/root/.local/share/ov/data:rw
+      - ${HOME}/docker/isaac-sim/documents:/root/Documents:rw
+      - ./IsaacSimAssests:/root/IsaacSimAssests:rw
+      - ./scenes:/root/scenes:rw
+      - conda_envs:/root/anaconda3/envs
+      - conda_pkgs:/root/anaconda3/pkgs
+
+volumes:
+  conda_envs:
+  conda_pkgs:
+
