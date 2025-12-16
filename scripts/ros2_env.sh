@@ -10,8 +10,10 @@ export AMENT_PYTHON_EXECUTABLE="${AMENT_PYTHON_EXECUTABLE:-$HOME/.conda/envs/ros
 
 # Prefer system-wide conda if present.
 if [[ -f /opt/conda/etc/profile.d/conda.sh ]]; then
+  set +u
   # shellcheck disable=SC1091
   source /opt/conda/etc/profile.d/conda.sh
+  set -u
 else
   echo "[go2_ros2] ERROR: /opt/conda not found. Install/enable conda first." >&2
   return 1
