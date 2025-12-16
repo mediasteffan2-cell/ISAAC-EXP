@@ -1,0 +1,225 @@
+[go2_nav2] Using params: /home/steffan.wolter/Desktop/ROBOT/repo-go2/nav2/nav2_slam_params.yaml
+[go2_nav2] Using pointcloud_to_laserscan params: /home/steffan.wolter/Desktop/ROBOT/repo-go2/nav2/pointcloud_to_laserscan.yaml
+[go2_nav2] Using dummy map: /home/steffan.wolter/Desktop/ROBOT/repo-go2/nav2/empty_map.yaml
+[go2_nav2] Starting base_footprint TF (base_link -> base_footprint)...
+[go2_nav2] Starting pointcloud_to_laserscan...
+[INFO] [1765922018.453630480] [go2_base_footprint_tf]: Publishing 'unitree_go2/base_link' -> 'unitree_go2/base_footprint' (yaw-only footprint), driven by TF 'odom' -> 'unitree_go2/base_link'
+[INFO] [1765922018.484246669] [go2_pc_to_scan]: Converting '/unitree_go2/lidar/point_cloud' -> '/scan_raw' bins=723 range=[0.1,30.0] height=[-0.5,0.5] stamp_offset=0.02s max_pub_rate=5.0Hz
+[go2_nav2] Starting scan QoS relay (/scan_raw -> /scan)...
+[go2_nav2] Starting Nav2 bringup (SLAM mode)...
+[go2_nav2] Waiting for /scan and /map to appear...
+[INFO] [launch]: All log files can be found below /home/steffan.wolter/.ros/log/2025-12-16-22-53-40-478545-detroit-1214633
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [1765922020.526043370] [go2_scan_qos_relay]: Relaying '/scan_raw' -> '/scan' (in: BEST_EFFORT, out: RELIABLE)
+[go2_nav2] Nav2+SLAM is running. Open RViz in another terminal if desired:
+  rviz2 -d /home/steffan.wolter/Desktop/ROBOT/repo-go2/nav2/go2_nav2.rviz
+[go2_nav2] Press Ctrl-C here to stop Nav2+SLAM.
+[INFO] [component_container_isolated-1]: process started with pid [1214717]
+[INFO] [map_saver_server-2]: process started with pid [1214719]
+[INFO] [lifecycle_manager-3]: process started with pid [1214721]
+[INFO] [sync_slam_toolbox_node-4]: process started with pid [1214723]
+[sync_slam_toolbox_node-4] [INFO] [1765922021.175176320] [slam_toolbox]: Node using stack size 40000000
+[lifecycle_manager-3] [INFO] [1765922021.177134825] [lifecycle_manager_slam]: Creating
+[lifecycle_manager-3] [INFO] [1765922021.182030057] [lifecycle_manager_slam]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[map_saver_server-2] [INFO] [1765922021.184768582] [map_saver]: 
+[map_saver_server-2] 	map_saver lifecycle node launched. 
+[map_saver_server-2] 	Waiting on external lifecycle transitions to activate
+[map_saver_server-2] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[map_saver_server-2] [INFO] [1765922021.184889088] [map_saver]: Creating
+[lifecycle_manager-3] [INFO] [1765922021.185881555] [lifecycle_manager_slam]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-3] [INFO] [1765922021.185945084] [lifecycle_manager_slam]: [34m[1mConfiguring map_saver[0m[0m
+[map_saver_server-2] [INFO] [1765922021.186186075] [map_saver]: Configuring
+[lifecycle_manager-3] [INFO] [1765922021.194897780] [lifecycle_manager_slam]: [34m[1mActivating map_saver[0m[0m
+[map_saver_server-2] [INFO] [1765922021.195113804] [map_saver]: Activating
+[map_saver_server-2] [INFO] [1765922021.195162154] [map_saver]: Creating bond (map_saver) to lifecycle manager.
+[sync_slam_toolbox_node-4] [INFO] [1765922021.232503581] [slam_toolbox]: Using solver plugin solver_plugins::CeresSolver
+[sync_slam_toolbox_node-4] [INFO] [1765922021.232892398] [slam_toolbox]: CeresSolver: Using SCHUR_JACOBI preconditioner.
+[lifecycle_manager-3] [INFO] [1765922021.300697398] [lifecycle_manager_slam]: Server map_saver connected with bond.
+[lifecycle_manager-3] [INFO] [1765922021.300748133] [lifecycle_manager_slam]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-3] [INFO] [1765922021.300758302] [lifecycle_manager_slam]: [34m[1mCreating bond timer...[0m[0m
+[component_container_isolated-1] [INFO] [1765922021.371122141] [nav2_container]: Load Library: /home/steffan.wolter/.conda/envs/ros2_humble/lib/libcontroller_server_core.so
+[component_container_isolated-1] [INFO] [1765922021.377420609] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[component_container_isolated-1] [INFO] [1765922021.377472747] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[component_container_isolated-1] [INFO] [1765922021.391499769] [controller_server]: 
+[component_container_isolated-1] 	controller_server lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1765922021.394926402] [controller_server]: Creating controller server
+[component_container_isolated-1] [INFO] [1765922021.408565418] [local_costmap.local_costmap]: 
+[component_container_isolated-1] 	local_costmap lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1765922021.408958864] [local_costmap.local_costmap]: Creating Costmap
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/controller_server' in container '/nav2_container'
+[component_container_isolated-1] [INFO] [1765922021.412770187] [nav2_container]: Load Library: /home/steffan.wolter/.conda/envs/ros2_humble/lib/libsmoother_server_core.so
+[component_container_isolated-1] [INFO] [1765922021.414346537] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[component_container_isolated-1] [INFO] [1765922021.414402983] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[component_container_isolated-1] [INFO] [1765922021.427351727] [smoother_server]: 
+[component_container_isolated-1] 	smoother_server lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1765922021.428549980] [smoother_server]: Creating smoother server
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/smoother_server' in container '/nav2_container'
+[component_container_isolated-1] [INFO] [1765922021.430842450] [nav2_container]: Load Library: /home/steffan.wolter/.conda/envs/ros2_humble/lib/libplanner_server_core.so
+[component_container_isolated-1] [INFO] [1765922021.431906432] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_planner::PlannerServer>
+[component_container_isolated-1] [INFO] [1765922021.431926159] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_planner::PlannerServer>
+[component_container_isolated-1] [INFO] [1765922021.444315616] [planner_server]: 
+[component_container_isolated-1] 	planner_server lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1765922021.446243384] [planner_server]: Creating
+[component_container_isolated-1] [INFO] [1765922021.460097162] [global_costmap.global_costmap]: 
+[component_container_isolated-1] 	global_costmap lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1765922021.460602768] [global_costmap.global_costmap]: Creating Costmap
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/planner_server' in container '/nav2_container'
+[component_container_isolated-1] [INFO] [1765922021.464419702] [nav2_container]: Load Library: /home/steffan.wolter/.conda/envs/ros2_humble/lib/libbehavior_server_core.so
+[component_container_isolated-1] [INFO] [1765922021.468062930] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<behavior_server::BehaviorServer>
+[component_container_isolated-1] [INFO] [1765922021.468080142] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<behavior_server::BehaviorServer>
+[component_container_isolated-1] [INFO] [1765922021.480671908] [behavior_server]: 
+[component_container_isolated-1] 	behavior_server lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/behavior_server' in container '/nav2_container'
+[component_container_isolated-1] [INFO] [1765922021.484324314] [nav2_container]: Load Library: /home/steffan.wolter/.conda/envs/ros2_humble/lib/libbt_navigator_core.so
+[component_container_isolated-1] [INFO] [1765922021.485942282] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_bt_navigator::BtNavigator>
+[component_container_isolated-1] [INFO] [1765922021.485958753] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_bt_navigator::BtNavigator>
+[component_container_isolated-1] [INFO] [1765922021.500219583] [bt_navigator]: 
+[component_container_isolated-1] 	bt_navigator lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1765922021.500304702] [bt_navigator]: Creating
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/bt_navigator' in container '/nav2_container'
+[component_container_isolated-1] [INFO] [1765922021.502398781] [nav2_container]: Load Library: /home/steffan.wolter/.conda/envs/ros2_humble/lib/libwaypoint_follower_core.so
+[component_container_isolated-1] [INFO] [1765922021.503284259] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_waypoint_follower::WaypointFollower>
+[component_container_isolated-1] [INFO] [1765922021.503302412] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_waypoint_follower::WaypointFollower>
+[component_container_isolated-1] [INFO] [1765922021.517118590] [waypoint_follower]: 
+[component_container_isolated-1] 	waypoint_follower lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1765922021.517478083] [waypoint_follower]: Creating
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/waypoint_follower' in container '/nav2_container'
+[component_container_isolated-1] [INFO] [1765922021.519718225] [nav2_container]: Load Library: /home/steffan.wolter/.conda/envs/ros2_humble/lib/libvelocity_smoother_core.so
+[component_container_isolated-1] [INFO] [1765922021.520481634] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_velocity_smoother::VelocitySmoother>
+[component_container_isolated-1] [INFO] [1765922021.520495350] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_velocity_smoother::VelocitySmoother>
+[component_container_isolated-1] [INFO] [1765922021.534940264] [velocity_smoother]: 
+[component_container_isolated-1] 	velocity_smoother lifecycle node launched. 
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/velocity_smoother' in container '/nav2_container'
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1765922021.536807990] [nav2_container]: Load Library: /home/steffan.wolter/.conda/envs/ros2_humble/lib/libnav2_lifecycle_manager_core.so
+[component_container_isolated-1] [INFO] [1765922021.537849288] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[component_container_isolated-1] [INFO] [1765922021.537873884] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[component_container_isolated-1] [INFO] [1765922021.552336752] [lifecycle_manager_navigation]: Creating
+[component_container_isolated-1] [INFO] [1765922021.558252734] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/lifecycle_manager_navigation' in container '/nav2_container'
+[component_container_isolated-1] [INFO] [1765922021.579581011] [lifecycle_manager_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
+[component_container_isolated-1] [INFO] [1765922021.579636886] [lifecycle_manager_navigation]: [34m[1mConfiguring controller_server[0m[0m
+[component_container_isolated-1] [INFO] [1765922021.579777839] [controller_server]: Configuring controller interface
+[component_container_isolated-1] [INFO] [1765922021.580108047] [controller_server]: getting goal checker plugins..
+[component_container_isolated-1] [INFO] [1765922021.580250915] [controller_server]: Controller frequency set to 20.0000Hz
+[component_container_isolated-1] [INFO] [1765922021.580283215] [local_costmap.local_costmap]: Configuring
+[component_container_isolated-1] [INFO] [1765922021.586622429] [local_costmap.local_costmap]: Using plugin "voxel_layer"
+[component_container_isolated-1] [INFO] [1765922021.589701823] [local_costmap.local_costmap]: Subscribed to Topics: scan
+[component_container_isolated-1] [INFO] [1765922021.596485168] [local_costmap.local_costmap]: Initialized plugin "voxel_layer"
+[component_container_isolated-1] [INFO] [1765922021.596526535] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[component_container_isolated-1] [INFO] [1765922021.597494307] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[component_container_isolated-1] [INFO] [1765922021.607695158] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[component_container_isolated-1] [INFO] [1765922021.608722881] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[component_container_isolated-1] [INFO] [1765922021.609257442] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[component_container_isolated-1] [INFO] [1765922021.611460194] [controller_server]: Created controller : FollowPath of type dwb_core::DWBLocalPlanner
+[component_container_isolated-1] [INFO] [1765922021.612861988] [controller_server]: Setting transform_tolerance to 0.500000
+[component_container_isolated-1] [INFO] [1765922021.623871463] [controller_server]: Using critic "RotateToGoal" (dwb_critics::RotateToGoalCritic)
+[component_container_isolated-1] [INFO] [1765922021.624596279] [controller_server]: Critic plugin initialized
+[component_container_isolated-1] [INFO] [1765922021.624748223] [controller_server]: Using critic "Oscillation" (dwb_critics::OscillationCritic)
+[component_container_isolated-1] [INFO] [1765922021.625339049] [controller_server]: Critic plugin initialized
+[component_container_isolated-1] [INFO] [1765922021.625491925] [controller_server]: Using critic "BaseObstacle" (dwb_critics::BaseObstacleCritic)
+[component_container_isolated-1] [INFO] [1765922021.625769034] [controller_server]: Critic plugin initialized
+[component_container_isolated-1] [INFO] [1765922021.626072632] [controller_server]: Using critic "GoalAlign" (dwb_critics::GoalAlignCritic)
+[component_container_isolated-1] [INFO] [1765922021.626600891] [controller_server]: Critic plugin initialized
+[component_container_isolated-1] [INFO] [1765922021.626780136] [controller_server]: Using critic "PathAlign" (dwb_critics::PathAlignCritic)
+[component_container_isolated-1] [INFO] [1765922021.627195794] [controller_server]: Critic plugin initialized
+[component_container_isolated-1] [INFO] [1765922021.627353349] [controller_server]: Using critic "PathDist" (dwb_critics::PathDistCritic)
+[component_container_isolated-1] [INFO] [1765922021.627671244] [controller_server]: Critic plugin initialized
+[component_container_isolated-1] [INFO] [1765922021.627805425] [controller_server]: Using critic "GoalDist" (dwb_critics::GoalDistCritic)
+[component_container_isolated-1] [INFO] [1765922021.628080881] [controller_server]: Critic plugin initialized
+[component_container_isolated-1] [INFO] [1765922021.628101860] [controller_server]: Controller Server has FollowPath  controllers available.
+[component_container_isolated-1] [INFO] [1765922021.635343733] [lifecycle_manager_navigation]: [34m[1mConfiguring smoother_server[0m[0m
+[component_container_isolated-1] [INFO] [1765922021.635571409] [smoother_server]: Configuring smoother server
+[component_container_isolated-1] [INFO] [1765922021.646461150] [smoother_server]: Created smoother : simple_smoother of type nav2_smoother::SimpleSmoother
+[component_container_isolated-1] [INFO] [1765922021.647621953] [smoother_server]: Smoother Server has simple_smoother  smoothers available.
+[component_container_isolated-1] [INFO] [1765922021.654140663] [lifecycle_manager_navigation]: [34m[1mConfiguring planner_server[0m[0m
+[component_container_isolated-1] [INFO] [1765922021.654285273] [planner_server]: Configuring
+[component_container_isolated-1] [INFO] [1765922021.654352429] [global_costmap.global_costmap]: Configuring
+[component_container_isolated-1] [INFO] [1765922021.660567421] [global_costmap.global_costmap]: Using plugin "static_layer"
+[component_container_isolated-1] [INFO] [1765922021.661748200] [global_costmap.global_costmap]: Subscribing to the map topic (/map) with transient local durability
+[component_container_isolated-1] [INFO] [1765922021.662531446] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[component_container_isolated-1] [INFO] [1765922021.662550973] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[component_container_isolated-1] [INFO] [1765922021.663387719] [global_costmap.global_costmap]: Subscribed to Topics: scan
+[component_container_isolated-1] [INFO] [1765922021.667434984] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[component_container_isolated-1] [INFO] [1765922021.667461874] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[component_container_isolated-1] [INFO] [1765922021.668530754] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[component_container_isolated-1] [INFO] [1765922021.677724060] [planner_server]: Created global planner plugin GridBased of type nav2_navfn_planner/NavfnPlanner
+[component_container_isolated-1] [INFO] [1765922021.677764335] [planner_server]: Configuring plugin GridBased of type NavfnPlanner
+[component_container_isolated-1] [INFO] [1765922021.679453867] [planner_server]: Planner Server has GridBased  planners available.
+[component_container_isolated-1] [INFO] [1765922021.690117465] [lifecycle_manager_navigation]: [34m[1mConfiguring behavior_server[0m[0m
+[component_container_isolated-1] [INFO] [1765922021.690391838] [behavior_server]: Configuring
+[component_container_isolated-1] [INFO] [1765922021.700226885] [behavior_server]: Creating behavior plugin spin of type nav2_behaviors/Spin
+[component_container_isolated-1] [INFO] [1765922021.701472446] [behavior_server]: Configuring spin
+[component_container_isolated-1] [INFO] [1765922021.710786688] [behavior_server]: Creating behavior plugin backup of type nav2_behaviors/BackUp
+[component_container_isolated-1] [INFO] [1765922021.712495396] [behavior_server]: Configuring backup
+[component_container_isolated-1] [INFO] [1765922021.722249662] [behavior_server]: Creating behavior plugin drive_on_heading of type nav2_behaviors/DriveOnHeading
+[component_container_isolated-1] [INFO] [1765922021.724048699] [behavior_server]: Configuring drive_on_heading
+[component_container_isolated-1] [INFO] [1765922021.735450387] [behavior_server]: Creating behavior plugin assisted_teleop of type nav2_behaviors/AssistedTeleop
+[component_container_isolated-1] [INFO] [1765922021.736936619] [behavior_server]: Configuring assisted_teleop
+[component_container_isolated-1] [INFO] [1765922021.748536769] [behavior_server]: Creating behavior plugin wait of type nav2_behaviors/Wait
+[component_container_isolated-1] [INFO] [1765922021.749577016] [behavior_server]: Configuring wait
+[component_container_isolated-1] [INFO] [1765922021.756387141] [lifecycle_manager_navigation]: [34m[1mConfiguring bt_navigator[0m[0m
+[component_container_isolated-1] [INFO] [1765922021.756660673] [bt_navigator]: Configuring
+[component_container_isolated-1] [INFO] [1765922021.847925299] [lifecycle_manager_navigation]: [34m[1mConfiguring waypoint_follower[0m[0m
+[component_container_isolated-1] [INFO] [1765922021.848096640] [waypoint_follower]: Configuring
+[component_container_isolated-1] [INFO] [1765922021.867030084] [waypoint_follower]: Created waypoint_task_executor : wait_at_waypoint of type nav2_waypoint_follower::WaitAtWaypoint
+[component_container_isolated-1] [INFO] [1765922021.868051426] [lifecycle_manager_navigation]: [34m[1mConfiguring velocity_smoother[0m[0m
+[component_container_isolated-1] [INFO] [1765922021.868220993] [velocity_smoother]: Configuring velocity smoother
+[component_container_isolated-1] [INFO] [1765922021.873876768] [lifecycle_manager_navigation]: [34m[1mActivating controller_server[0m[0m
+[component_container_isolated-1] [INFO] [1765922021.874049482] [controller_server]: Activating
+[component_container_isolated-1] [INFO] [1765922021.874083094] [local_costmap.local_costmap]: Activating
+[component_container_isolated-1] [INFO] [1765922021.874096880] [local_costmap.local_costmap]: Checking transform
+[component_container_isolated-1] [INFO] [1765922021.874107801] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922022.374185808] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922022.874196230] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922023.374184409] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922023.874197235] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922024.374199391] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922024.874163376] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922025.374187493] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922025.874186563] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922026.374188689] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922026.874167311] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922027.374200274] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922027.874183044] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922028.374140597] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922028.874189370] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922029.374193059] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922029.874187742] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922030.374193545] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922030.874187145] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922031.374189732] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922031.874190596] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922032.374188104] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922032.874205900] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922033.374187037] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922033.874188923] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922034.374196830] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922034.874189108] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922035.374209649] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922035.874207007] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922036.374186220] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922036.874204367] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922037.374205181] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922037.874195065] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922038.374209805] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922038.874186514] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922039.374201575] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[component_container_isolated-1] [INFO] [1765922039.874192351] [local_costmap.local_costmap]: Timed out waiting for transform from unitree_go2/base_footprint to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist

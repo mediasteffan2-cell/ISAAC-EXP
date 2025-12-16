@@ -18,3 +18,4 @@ outputs/
 logs/
 !logs/.gitkeep
 *.log
+!debug/*.log
